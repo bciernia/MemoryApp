@@ -11,8 +11,8 @@ for(let i=1;i<9;i++){
 const prepareCardsToGame = () => {
     const arrayToReturn = [];
     photoArray.forEach((photo,index) => {
-        const c1 = new Card(index+1, photo);
-        const c2 = new Card(index+1, photo);
+        const c1 = new Card(index, photo);
+        const c2 = new Card(index, photo);
 
         arrayToReturn.push(c1,c2);
     })
