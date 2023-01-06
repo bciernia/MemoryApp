@@ -1,0 +1,51 @@
+$main-color: #83d9a5;
+$checked-color: #198656;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $main-color;
+    font-family: "Montserrat", sans-serif;
+}
+
+.center-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: .125rem;
+}
+
+.header-container{
+    width: 100%;
+    height: 5rem;
+}
+
+.btn{
+    margin: auto;
+}
+
+.cards-container{
+    width: 50rem;
+    height: 100%;
+    margin: 0.5rem auto auto;
+
+    .card{
+        margin: .125rem;
+
+        img{
+            width: 10rem;
+            height: 10rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+    }
+}
+
+.checked-card{
+    background-color: $checked-color;
+}
