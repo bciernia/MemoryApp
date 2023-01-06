@@ -1,6 +1,7 @@
 import {Card} from "../Card/Card.js";
 import {createFileArray} from "../../design-system/file-array/fileArray.js";
-import {createDiv, createImg} from "../../design-system/core/core.js";
+import {createDiv, createImg, clearDiv} from "../../design-system/core/core.js";
+import {shuffleArray} from "../../design-system/shuffle-array/shuffleArray.js";
 
 const cardsContainer = document.querySelector('.cards-container');
 
@@ -17,10 +18,13 @@ const prepareCardsToGame = () => {
     return cardsArray;
 }
 
-const test = prepareCardsToGame();
 
 export const generateCardsGrid = () => {
-    test.forEach(photo => {
+    clearDiv(cardsContainer);
+    const cardsArrayToShuffle = prepareCardsToGame();
+    const gameArray = shuffleArray(cardsArrayToShuffle);
+
+    gameArray.forEach(photo => {
         const div = createDiv(['card']);
         const img = createImg(photo.currentImg, `Card ${photo.id}`, []);
         img.id = photo.id;

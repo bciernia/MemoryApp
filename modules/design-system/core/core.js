@@ -25,3 +25,7 @@ export const createBtn = (text, additionalClasses, onClickHandler) => {
 
     return btn;
 };
+
+export const clearDiv = div => {
+    div.innerHTML = "";
+}
