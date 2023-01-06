@@ -13,6 +13,6 @@ export class Card {
     }
 
     reverseCard() {
-        (this.currentImg === this.cardBack) ? this.currentImg = this.cardFront :  this.currentImg = this.cardBack;
+        (this.currentImg === this.cardBack) ? this.currentImg = this.cardFront : this.currentImg = this.cardBack;
     }
 }

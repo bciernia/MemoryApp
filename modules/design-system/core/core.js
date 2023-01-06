@@ -29,3 +29,7 @@ export const createBtn = (text, additionalClasses, onClickHandler) => {
 export const clearDiv = div => {
     div.innerHTML = "";
 }
+
+export const switchClicking = element => {
+    element.classList.toggle('prevent-clicking');
+}

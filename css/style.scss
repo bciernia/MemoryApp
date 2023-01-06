@@ -1,5 +1,5 @@
 $main-color: #83d9a5;
-$checked-color: #198656;
+$checked-card-color: #198656;
 
 * {
     box-sizing: border-box;
@@ -27,6 +27,7 @@ body{
 
 .btn{
     margin: auto;
+    z-index: 999;
 }
 
 .cards-container{
@@ -47,5 +48,9 @@ body{
 }
 
 .checked-card{
-    background-color: $checked-color;
+    background-color: $checked-card-color;
+}
+
+.prevent-clicking{
+    pointer-events:none
 }

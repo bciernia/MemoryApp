@@ -24,6 +24,7 @@ body {
 
 .btn {
   margin: auto;
+  z-index: 999;
 }
 
 .cards-container {
@@ -43,6 +44,10 @@ body {
 
 .checked-card {
   background-color: #198656;
+}
+
+.prevent-clicking {
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=style.css.map */

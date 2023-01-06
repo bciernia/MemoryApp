@@ -5,4 +5,5 @@ const newGameBtn = document.querySelector('.start-btn');
 newGameBtn.addEventListener('click', () => {
 
     generateCardsGrid();
+
 })
