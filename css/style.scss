@@ -1,5 +1,7 @@
-$main-color: #83d9a5;
-$checked-card-color: #198656;
+$main-color: #D67D3E;
+$btn-color: #F9E4D4;
+$text-color: #232300;
+$footer-color: #ffa56c;
 
 * {
   box-sizing: border-box;
@@ -31,14 +33,17 @@ body {
   margin: auto;
   width: 7.5rem;
   height: 2.5rem;
-  border: solid 4px;
+  border: solid 4px $btn-color;
   border-radius: 1rem;
-  background-color: transparent;
+  background-color: $btn-color;
+  color: $text-color;
+  transition: all 0.15s ease-in;
 }
 
 .btn:hover{
   cursor: pointer;
-  transform: scale(1.25);
+  transition: all 0.15s ease-in;
+  transform: scale(1.125);
 }
 
 .cards-container {
@@ -62,3 +67,5 @@ body {
 .prevent-clicking {
   pointer-events: none
 }
+
+
