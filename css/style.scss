@@ -26,8 +26,19 @@ body {
 }
 
 .btn {
+  font-weight: bold;
+  font-size: 1rem;
   margin: auto;
-  z-index: 999;
+  width: 7.5rem;
+  height: 2.5rem;
+  border: solid 4px;
+  border-radius: 1rem;
+  background-color: transparent;
+}
+
+.btn:hover{
+  cursor: pointer;
+  transform: scale(1.25);
 }
 
 .cards-container {
