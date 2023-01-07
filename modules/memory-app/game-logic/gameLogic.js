@@ -1,8 +1,11 @@
 import {switchClicking, createH1, createParagraph} from "../../design-system/core/core.js";
 import {clearDiv} from "../../design-system/core/core.js";
 
+const attemptsCounterParagraph = document.querySelector('.attempt-counter');
+
 let gridSize = 16;
 let cardPairsChecked = 0;
+let attemptCounter = 0;
 
 const areTwoCardsSame = cards => {
     return (cards[0].cardFront === cards[1].cardFront);
@@ -13,7 +16,9 @@ export const shouldEndGame = (cardsContainer) => {
     if(gridSize === cardPairsChecked){
         clearDiv(cardsContainer);
         const h1 = createH1('YOU WON!', ['centered-text']);
-        const p = createParagraph('Congratulation, you won!', ['centered-text']);
+        const p = createParagraph(`You tried ${attemptCounter} times`, ['centered-text']);
+
+        attemptsCounterParagraph.style.display='none';
 
         cardsContainer.classList.toggle('flex-direction-col');
 
@@ -23,9 +28,12 @@ export const shouldEndGame = (cardsContainer) => {
 }
 
 export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
-    switchClicking(cardsContainer);
     const cardsAreSame = areTwoCardsSame(chosenCards);
     const images = Array.from(cardsContainer.getElementsByTagName('img'));
+
+    switchClicking(cardsContainer);
+    attemptCounter++;
+    attemptsCounterParagraph.textContent = `Number of tries: ${attemptCounter}`;
 
     if (cardsAreSame) {
         switchClicking(cardsContainer);
