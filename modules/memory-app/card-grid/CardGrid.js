@@ -10,11 +10,11 @@ const chosenCards = [];
 const prepareCardsToGame = () => {
     const fileArray = createFileArray();
     const cardsArray = [];
-    fileArray.forEach((photo,index) => {
+    fileArray.forEach((photo, index) => {
         const c1 = new Card(index, photo);
         const c2 = new Card(index, photo);
 
-        cardsArray.push(c1,c2);
+        cardsArray.push(c1, c2);
     })
 
     return cardsArray;
@@ -25,11 +25,11 @@ const generateCardGrid = (cardsArray) => {
         const div = createDiv(['card']);
         const img = createImg(photo.currentImg, `Card ${photo.id}`, []);
         img.id = photo.id;
-        img.addEventListener('click',() => {
+        img.addEventListener('click', () => {
             photo.reverseCard();
             img.src = photo.currentImg;
             chosenCards.push(photo);
-            if(chosenCards.length === 2){
+            if (chosenCards.length === 2) {
                 //TODO areTwoCardsChosen returns number -> Function name to change
                 chosenCards.length =
                     areTwoCardsChosen(cardsArray, cardsContainer, chosenCards);
@@ -43,11 +43,11 @@ const generateCardGrid = (cardsArray) => {
 
 const turnAllCards = (gameArray, shouldShowCardsFront) => {
     const images = cardsContainer.getElementsByTagName('img');
-    for(let i=0;i<images.length;i++){
+    for (let i = 0; i < images.length; i++) {
         gameArray.find(card => {
-            if(images[i].id == card.id && shouldShowCardsFront){
+            if (images[i].id == card.id && shouldShowCardsFront) {
                 images[i].src = card.cardFront;
-            } else if(images[i].id == card.id && !shouldShowCardsFront){
+            } else if (images[i].id == card.id && !shouldShowCardsFront) {
                 images[i].src = card.cardBack;
             }
         })

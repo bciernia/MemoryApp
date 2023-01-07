@@ -1,4 +1,4 @@
-import {switchClicking} from "../../design-system/core/core.js";
+import {switchClicking, createH1, createParagraph} from "../../design-system/core/core.js";
 import {clearDiv} from "../../design-system/core/core.js";
 
 let gridSize = 16;
@@ -8,12 +8,17 @@ const areTwoCardsSame = cards => {
     return (cards[0].cardFront === cards[1].cardFront);
 }
 
-//TODO game ends before last card is turned
 export const shouldEndGame = (cardsContainer) => {
     console.log(gridSize + " " + cardPairsChecked)
     if(gridSize === cardPairsChecked){
-        alert('Game end');
         clearDiv(cardsContainer);
+        const h1 = createH1('YOU WON!', ['centered-text']);
+        const p = createParagraph('Congratulation, you won!', ['centered-text']);
+
+        cardsContainer.classList.toggle('flex-direction-col');
+
+        cardsContainer.appendChild(h1);
+        cardsContainer.appendChild(p);
     }
 }
 
