@@ -22,6 +22,14 @@ body {
   gap: .125rem;
 }
 
+.flex-direction-col{
+  flex-direction: column;
+}
+
+.centered-text{
+  text-align: center;
+}
+
 .header-container {
   width: 100%;
   height: 5rem;
