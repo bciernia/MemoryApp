@@ -20,21 +20,20 @@ const prepareCardsToGame = () => {
     return cardsArray;
 }
 
-const generateCardGrid = cardsArray => {
+const generateCardGrid = (cardsArray) => {
     cardsArray.forEach(photo => {
         const div = createDiv(['card']);
         const img = createImg(photo.currentImg, `Card ${photo.id}`, []);
         img.id = photo.id;
-        img.addEventListener('click', () => {
+        img.addEventListener('click',() => {
             photo.reverseCard();
-            img.classList.toggle('checked-card');
             img.src = photo.currentImg;
             chosenCards.push(photo);
             if(chosenCards.length === 2){
-                areTwoCardsChosen(cardsContainer, chosenCards);
-                chosenCards.length = 0;
+                chosenCards.length =
+                    areTwoCardsChosen(cardsArray, cardsContainer, chosenCards);
             }
-        })
+        });
         div.appendChild(img);
         cardsContainer.appendChild(div);
     })

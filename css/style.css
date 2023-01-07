@@ -33,17 +33,14 @@ body {
   margin: 0.5rem auto auto;
 }
 .cards-container .card {
-  margin: 0.125rem;
+  margin: 0.25rem;
 }
 .cards-container .card img {
   width: 10rem;
   height: 10rem;
   cursor: pointer;
-  padding: 0.5rem;
-}
-
-.checked-card {
-  background-color: #198656;
+  border: solid 4px;
+  border-radius: 1.5rem;
 }
 
 .prevent-clicking {

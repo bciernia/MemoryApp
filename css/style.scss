@@ -36,19 +36,16 @@ body {
   margin: 0.5rem auto auto;
 
   .card {
-    margin: .125rem;
+    margin: .25rem;
 
     img {
       width: 10rem;
       height: 10rem;
       cursor: pointer;
-      padding: 0.5rem;
+      border: solid 4px;
+      border-radius: 1.5rem;
     }
   }
-}
-
-.checked-card {
-  background-color: $checked-card-color;
 }
 
 .prevent-clicking {
