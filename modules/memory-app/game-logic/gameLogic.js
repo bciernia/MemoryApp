@@ -14,9 +14,7 @@ export const shouldEndGame = (cardsContainer) => {
     if(gridSize === cardPairsChecked){
         alert('Game end');
         clearDiv(cardsContainer);
-        return true;
     }
-    console.log('nie koniec');
 }
 
 export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
@@ -26,6 +24,11 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
 
     if (cardsAreSame) {
         switchClicking(cardsContainer);
+        for (let i = 0; i < images.length; i++) {
+            if (((i === gameArray.indexOf(chosenCards[0]))) || (i === gameArray.indexOf(chosenCards[1]))) {
+                images[i].classList.toggle('prevent-clicking');
+            }
+        }
         chosenCards.length = 0;
         cardPairsChecked += 2;
     } else {
@@ -40,8 +43,6 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
             chosenCards.length = 0;
         }, 1000);
     }
-
-
 
     return chosenCards.length;
 }

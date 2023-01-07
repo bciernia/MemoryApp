@@ -25,7 +25,6 @@ const generateCardGrid = (cardsArray) => {
         const div = createDiv(['card']);
         const img = createImg(photo.currentImg, `Card ${photo.id}`, []);
         img.id = photo.id;
-        //TODO disasble ability to click on turned cards
         img.addEventListener('click',() => {
             photo.reverseCard();
             img.src = photo.currentImg;
