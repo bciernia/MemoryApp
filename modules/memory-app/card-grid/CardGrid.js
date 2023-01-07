@@ -5,6 +5,7 @@ import {shuffleArray} from "../../design-system/shuffle-array/shuffleArray.js";
 import {areTwoCardsChosen} from "../game-logic/gameLogic.js";
 
 const cardsContainer = document.querySelector('.cards-container');
+const chosenCards = [];
 
 const prepareCardsToGame = () => {
     const fileArray = createFileArray();
@@ -28,14 +29,18 @@ const generateCardGrid = cardsArray => {
             photo.reverseCard();
             img.classList.toggle('checked-card');
             img.src = photo.currentImg;
-            areTwoCardsChosen(cardsArray);
+            chosenCards.push(photo);
+            if(chosenCards.length === 2){
+                areTwoCardsChosen(cardsContainer, chosenCards);
+                chosenCards.length = 0;
+            }
         })
         div.appendChild(img);
         cardsContainer.appendChild(div);
     })
 }
 
-const turnCards = (gameArray, shouldShowCardsFront) => {
+const turnAllCards = (gameArray, shouldShowCardsFront) => {
     const images = cardsContainer.getElementsByTagName('img');
     for(let i=0;i<images.length;i++){
         gameArray.find(card => {
@@ -53,10 +58,10 @@ export const generateCardsGrid = () => {
     const cardsArrayToShuffle = prepareCardsToGame();
     const gameArray = shuffleArray(cardsArrayToShuffle);
     generateCardGrid(gameArray);
-    turnCards(gameArray, true);
+    turnAllCards(gameArray, true);
     switchClicking(cardsContainer);
     setTimeout(() => {
-        turnCards(gameArray, false);
+        turnAllCards(gameArray, false);
         switchClicking(cardsContainer);
     }, 3000);
 };

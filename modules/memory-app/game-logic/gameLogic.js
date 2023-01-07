@@ -1,11 +1,21 @@
-export const areTwoCardsChosen = cardsGrid => {
-    let reversedCardsNumber = 0;
+import {switchClicking} from "../../design-system/core/core.js";
 
-    cardsGrid.forEach(card => {
-        if(card.currentImg !== card.cardBack) reversedCardsNumber++;
-    })
+const areTwoCardsSame = cards => {
+    return (cards[0].cardFront === cards[1].cardFront);
+}
 
-    if(reversedCardsNumber === 2){
-        console.log('stop');
+export const areTwoCardsChosen = (cardsContainer, chosenCards) => {
+    switchClicking(cardsContainer);
+    const cardsAreSame = areTwoCardsSame(chosenCards);
+
+    if (cardsAreSame) {
+        switchClicking(cardsContainer);
+        console.log('same');
+    } else {
+        console.log('not same');
+        setTimeout(() => {
+            chosenCards.forEach(card => card.reverseCard());
+            switchClicking(cardsContainer);
+        }, 2000);
     }
 }
