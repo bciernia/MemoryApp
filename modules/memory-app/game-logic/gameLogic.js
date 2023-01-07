@@ -1,9 +1,22 @@
 import {switchClicking} from "../../design-system/core/core.js";
+import {clearDiv} from "../../design-system/core/core.js";
 
-let cardPairsToCheck = 0;
+let gridSize = 16;
+let cardPairsChecked = 0;
 
 const areTwoCardsSame = cards => {
     return (cards[0].cardFront === cards[1].cardFront);
+}
+
+//TODO game ends before last card is turned
+export const shouldEndGame = (cardsContainer) => {
+    console.log(gridSize + " " + cardPairsChecked)
+    if(gridSize === cardPairsChecked){
+        alert('Game end');
+        clearDiv(cardsContainer);
+        return true;
+    }
+    console.log('nie koniec');
 }
 
 export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
@@ -14,6 +27,7 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
     if (cardsAreSame) {
         switchClicking(cardsContainer);
         chosenCards.length = 0;
+        cardPairsChecked += 2;
     } else {
         setTimeout(() => {
             for (let i = 0; i < images.length; i++) {
@@ -26,6 +40,8 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
             chosenCards.length = 0;
         }, 1000);
     }
+
+
 
     return chosenCards.length;
 }
