@@ -28,6 +28,7 @@ const generateCardGrid = (cardsArray) => {
         img.addEventListener('click', () => {
             photo.reverseCard();
             img.src = photo.currentImg;
+            img.classList.toggle('prevent-clicking');
             chosenCards.push(photo);
             if (chosenCards.length === 2) {
                 //TODO areTwoCardsChosen returns number -> Function name to change

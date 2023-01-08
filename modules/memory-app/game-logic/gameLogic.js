@@ -37,11 +37,6 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
 
     if (cardsAreSame) {
         switchClicking(cardsContainer);
-        for (let i = 0; i < images.length; i++) {
-            if (((i === gameArray.indexOf(chosenCards[0]))) || (i === gameArray.indexOf(chosenCards[1]))) {
-                images[i].classList.toggle('prevent-clicking');
-            }
-        }
         chosenCards.length = 0;
         cardPairsChecked += 2;
     } else {
@@ -49,6 +44,7 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
             for (let i = 0; i < images.length; i++) {
                 if (((i === gameArray.indexOf(chosenCards[0]))) || (i === gameArray.indexOf(chosenCards[1]))) {
                     images[i].src = chosenCards[0].cardBack;
+                    images[i].classList.toggle('prevent-clicking');
                     gameArray[i].reverseCard();
                 }
             }
