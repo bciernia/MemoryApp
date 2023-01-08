@@ -10,7 +10,7 @@ const chosenCards = [];
 let timerId;
 
 const prepareCardsToGame = () => {
-    const fileArray = createFileArray();
+    const fileArray = createFileArray('images/memory_images/', 'jpg');
     const cardsArray = [];
     fileArray.forEach((photo, index) => {
         const c1 = new Card(index, photo);

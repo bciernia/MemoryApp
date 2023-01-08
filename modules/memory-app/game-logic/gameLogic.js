@@ -35,8 +35,8 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
 
     switchClicking(cardsContainer);
     attemptCounter++;
-    attemptsCounterParagraph.style.display = 'block';
-    attemptsCounterParagraph.textContent = `Number of tries: ${attemptCounter}`;
+    // attemptsCounterParagraph.style.display = 'block';
+    // attemptsCounterParagraph.textContent = `Number of tries: ${attemptCounter}`;
 
     if (cardsAreSame) {
         switchClicking(cardsContainer);
