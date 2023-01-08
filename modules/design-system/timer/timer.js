@@ -18,3 +18,7 @@ export const resetTimer = (timerId) => {
     timer.textContent = time.toString();
     timer.style.display = 'none';
 }
+
+export const returnTime = () => {
+    return time;
+}

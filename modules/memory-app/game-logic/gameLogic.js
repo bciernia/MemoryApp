@@ -1,7 +1,8 @@
 import {switchClicking} from "../../design-system/core/core.js";
 import {clearDiv} from "../../design-system/core/core.js";
 import {showMessage} from "../../design-system/messages/messages.js";
-import {resetTimer} from "../../design-system/timer/timer.js";
+import {resetTimer, returnTime} from "../../design-system/timer/timer.js";
+import {addNewResultToRankingArray} from "../../design-system/ranking/ranking.js";
 
 const attemptsCounterParagraph = document.querySelector('.attempt-counter');
 const newGameBtn = document.querySelector('.btn-new-game');
@@ -18,6 +19,7 @@ const areTwoCardsSame = cards => {
 export const shouldEndGame = (cardsContainer, timerId) => {
     if (gridSize === cardPairsChecked) {
         clearDiv(cardsContainer);
+        addNewResultToRankingArray(playerName.value, returnTime());
         resetTimer(timerId);
         cardPairsChecked = 14;
         attemptsCounterParagraph.style.display = 'none';
@@ -35,8 +37,6 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
 
     switchClicking(cardsContainer);
     attemptCounter++;
-    // attemptsCounterParagraph.style.display = 'block';
-    // attemptsCounterParagraph.textContent = `Number of tries: ${attemptCounter}`;
 
     if (cardsAreSame) {
         switchClicking(cardsContainer);
