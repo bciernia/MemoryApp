@@ -3,9 +3,11 @@ import {createFileArray} from "../../design-system/file-array/fileArray.js";
 import {createDiv, createImg, clearDiv, switchClicking} from "../../design-system/core/core.js";
 import {shuffleArray} from "../../design-system/shuffle-array/shuffleArray.js";
 import {areTwoCardsChosen, shouldEndGame} from "../game-logic/gameLogic.js";
+import {startTimer} from "../../design-system/timer/timer.js";
 
 const cardsContainer = document.querySelector('.cards-container');
 const chosenCards = [];
+let timerId;
 
 const prepareCardsToGame = () => {
     const fileArray = createFileArray();
@@ -34,7 +36,7 @@ const generateCardGrid = (cardsArray) => {
                 //TODO areTwoCardsChosen returns number -> Function name to change
                 chosenCards.length =
                     areTwoCardsChosen(cardsArray, cardsContainer, chosenCards);
-                shouldEndGame(cardsContainer);
+                shouldEndGame(cardsContainer, timerId);
             }
         });
         div.appendChild(img);
@@ -66,6 +68,7 @@ export const generateCardsGrid = () => {
     setTimeout(() => {
         turnAllCards(gameArray, false);
         switchClicking(cardsContainer);
+        timerId = startTimer();
     }, 3000);
 };
 

@@ -1,6 +1,7 @@
 import {switchClicking} from "../../design-system/core/core.js";
 import {clearDiv} from "../../design-system/core/core.js";
 import {showMessage} from "../../design-system/messages/messages.js";
+import {resetTimer} from "../../design-system/timer/timer.js";
 
 const attemptsCounterParagraph = document.querySelector('.attempt-counter');
 const newGameBtn = document.querySelector('.btn-new-game');
@@ -14,10 +15,10 @@ const areTwoCardsSame = cards => {
     return (cards[0].cardFront === cards[1].cardFront);
 }
 
-export const shouldEndGame = (cardsContainer) => {
-    console.log(gridSize + " " + cardPairsChecked)
+export const shouldEndGame = (cardsContainer, timerId) => {
     if (gridSize === cardPairsChecked) {
         clearDiv(cardsContainer);
+        resetTimer(timerId);
         cardPairsChecked = 14;
         attemptsCounterParagraph.style.display = 'none';
         newGameBtn.style.display = 'block';

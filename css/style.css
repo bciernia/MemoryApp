@@ -71,4 +71,8 @@ body {
   pointer-events: none;
 }
 
+.timer {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
