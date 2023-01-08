@@ -3,9 +3,10 @@ import {clearDiv} from "../../design-system/core/core.js";
 import {showMessage} from "../../design-system/messages/messages.js";
 
 const attemptsCounterParagraph = document.querySelector('.attempt-counter');
+const newGameBtn = document.querySelector('.start-btn');
 
 let gridSize = 16;
-let cardPairsChecked = 14;
+let cardPairsChecked = 0;
 let attemptCounter = 0;
 
 const areTwoCardsSame = cards => {
@@ -16,8 +17,9 @@ export const shouldEndGame = (cardsContainer) => {
     console.log(gridSize + " " + cardPairsChecked)
     if (gridSize === cardPairsChecked) {
         clearDiv(cardsContainer);
+        cardPairsChecked = 0;
         attemptsCounterParagraph.style.display = 'none';
-
+        newGameBtn.style.display = 'block';
         showMessage(cardsContainer, 'You won!',
             `You tried ${attemptCounter} times`);
     }

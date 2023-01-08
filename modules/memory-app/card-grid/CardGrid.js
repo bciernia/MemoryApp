@@ -57,6 +57,7 @@ const turnAllCards = (gameArray, shouldShowCardsFront) => {
 
 export const generateCardsGrid = () => {
     clearDiv(cardsContainer);
+    cardsContainer.classList.remove('flex-direction-col');
     const cardsArrayToShuffle = prepareCardsToGame();
     const gameArray = shuffleArray(cardsArrayToShuffle);
     generateCardGrid(gameArray);
