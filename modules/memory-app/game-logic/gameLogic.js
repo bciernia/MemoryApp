@@ -4,6 +4,7 @@ import {showMessage} from "../../design-system/messages/messages.js";
 
 const attemptsCounterParagraph = document.querySelector('.attempt-counter');
 const newGameBtn = document.querySelector('.btn-new-game');
+const playerName = document.querySelector('#player-name');
 
 let gridSize = 16;
 let cardPairsChecked = 14;
@@ -20,8 +21,9 @@ export const shouldEndGame = (cardsContainer) => {
         cardPairsChecked = 14;
         attemptsCounterParagraph.style.display = 'none';
         newGameBtn.style.display = 'block';
+        playerName.style.display = 'block';
         showMessage(cardsContainer, 'You won!',
-            `You tried ${attemptCounter} times`);
+            `You tried ${attemptCounter} times, your name is ${playerName.value}`);
         attemptCounter = 0;
     }
 }
