@@ -34,7 +34,6 @@ $text-color: #232300;
 
 .table-div {
   height: 100%;
-  width: 100%;
   overflow: auto;
 
   table {
@@ -49,4 +48,8 @@ $text-color: #232300;
       padding: .3rem;
     }
   }
+}
+
+.table-div::-webkit-scrollbar{
+  width: 0rem;
 }

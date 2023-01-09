@@ -28,7 +28,6 @@
 
 .table-div {
   height: 100%;
-  width: 100%;
   overflow: auto;
 }
 .table-div table {
@@ -41,6 +40,10 @@
 .table-div table td {
   text-align: center;
   padding: 0.3rem;
+}
+
+.table-div::-webkit-scrollbar {
+  width: 0rem;
 }
 
 /*# sourceMappingURL=ranking.css.map */
