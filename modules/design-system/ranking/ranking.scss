@@ -1,10 +1,11 @@
 $main-ranking-color: #ffa56c;
 $btn-color: #F9E4D4;
 $text-color: #232300;
+$border-color: #e7650d;
 
 .ranking {
   position: absolute;
-  padding: 1.5rem;
+  padding: 0.75rem 1rem;
   top: -30rem;
   right: 3rem;
   width: 20rem;
@@ -40,7 +41,8 @@ $text-color: #232300;
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-    border: 3px solid purple;
+    border-top: 3px solid $border-color;
+    border-bottom: 3px solid $border-color;
 
     th,
     td {

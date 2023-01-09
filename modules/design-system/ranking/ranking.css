@@ -1,6 +1,6 @@
 .ranking {
   position: absolute;
-  padding: 1.5rem;
+  padding: 0.75rem 1rem;
   top: -30rem;
   right: 3rem;
   width: 20rem;
@@ -34,7 +34,8 @@
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  border: 3px solid purple;
+  border-top: 3px solid #e7650d;
+  border-bottom: 3px solid #e7650d;
 }
 .table-div table th,
 .table-div table td {
