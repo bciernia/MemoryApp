@@ -55,6 +55,9 @@ export const addRowToTable = (table, rowData) => {
         const {Name, Time} = obj;
         const tr = document.createElement('tr');
 
+        tr.appendChild(createTableData(index+1));
+
+        //TODO BUG -> Name might be to long
         if(Name !== ""){
             tr.appendChild(createTableData(Name));
         }else{

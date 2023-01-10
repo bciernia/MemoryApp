@@ -16,7 +16,6 @@ rankingTransitionBtn.addEventListener('click', () => {
         addRowToTable(rankingTable,resultRanking);
     }
 
-
     ranking.classList.toggle('ranking-hidden');
 })
 

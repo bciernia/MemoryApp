@@ -26,7 +26,7 @@ export const shouldEndGame = (cardsContainer, timerId) => {
         newGameBtn.style.display = 'block';
         playerName.style.display = 'block';
         showMessage(cardsContainer, 'You won!',
-            `You tried ${attemptCounter} times, your name is ${playerName.value}`);
+            `You tried ${attemptCounter} times!`);
         attemptCounter = 0;
     }
 }
