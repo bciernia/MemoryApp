@@ -44,6 +44,40 @@ export const createBtn = (text, additionalClasses, onClickHandler) => {
     return btn;
 };
 
+
+//TODO object destructuring to separate to ranking.js
+export const addRowToTable = (table, rowData) => {
+    table.innerText = "";
+
+    const sortedArray = sortArrayOfObjectsByNumber(rowData);
+
+    sortedArray.forEach((obj, index) => {
+        const {Name, Time} = obj;
+        const tr = document.createElement('tr');
+
+        if(Name !== ""){
+            tr.appendChild(createTableData(Name));
+        }else{
+            tr.appendChild(createTableData('<unknown>'));
+        }
+
+        tr.appendChild(createTableData(Time));
+        table.appendChild(tr);
+    })
+}
+
+export const sortArrayOfObjectsByNumber = (array) => {
+    return array.sort((a, b) => Number(a.Time) - Number(b.Time));
+}
+
+export const createTableData = (data) => {
+    const td = document.createElement('td');
+
+    td.textContent = data;
+
+    return td;
+}
+
 export const clearDiv = div => {
     div.innerHTML = "";
 }

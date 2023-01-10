@@ -1,5 +1,8 @@
+import {addRowToTable} from "../core/core.js";
+
 const rankingTransitionBtn = document.querySelector('.btn-ranking-transition');
 const ranking = document.querySelector('.ranking');
+const rankingTable = document.querySelector('.ranking-table-body');
 
 const rankingFromLocalStorage = localStorage.getItem('ranking');
 let resultRanking = [];
@@ -8,9 +11,12 @@ if(rankingFromLocalStorage!==null){
     resultRanking = JSON.parse(rankingFromLocalStorage);
 }
 
-console.log(resultRanking);
-
 rankingTransitionBtn.addEventListener('click', () => {
+    if(ranking.classList.contains('ranking-hidden')){
+        addRowToTable(rankingTable,resultRanking);
+    }
+
+
     ranking.classList.toggle('ranking-hidden');
 })
 
