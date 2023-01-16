@@ -9,7 +9,7 @@ const newGameBtn = document.querySelector('.btn-new-game');
 const playerName = document.querySelector('#player-name');
 
 let gridSize = 16;
-let cardPairsChecked = 14;
+let cardPairsChecked = 0;
 let attemptCounter = 0;
 
 const areTwoCardsSame = cards => {
