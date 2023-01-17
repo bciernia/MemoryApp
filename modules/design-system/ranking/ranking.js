@@ -29,3 +29,5 @@ export const addNewResultToRankingArray = (playersName, time) => {
 
     localStorage.setItem("ranking", JSON.stringify(resultRanking));
 }
+
+//TODO Box-shadow to ranking.css,  add word-wrap:break-word to names in ranking 
