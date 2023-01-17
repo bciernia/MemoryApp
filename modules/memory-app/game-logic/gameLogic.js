@@ -21,7 +21,7 @@ export const shouldEndGame = (cardsContainer, timerId) => {
         clearDiv(cardsContainer);
         addNewResultToRankingArray(playerName.value, returnTime());
         resetTimer(timerId);
-        cardPairsChecked = 14;
+        cardPairsChecked = 0;
         attemptsCounterParagraph.style.display = 'none';
         newGameBtn.style.display = 'block';
         playerName.style.display = 'block';
@@ -55,6 +55,5 @@ export const areTwoCardsChosen = (gameArray, cardsContainer, chosenCards) => {
             chosenCards.length = 0;
         }, 1000);
     }
-
     return chosenCards.length;
 }
