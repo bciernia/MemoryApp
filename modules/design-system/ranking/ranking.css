@@ -1,50 +1,59 @@
+:root {
+    --main-ranking-color: #ffa56c;
+    --btn-color: #F9E4D4;
+    --text-color: #232300;
+    --border-color: #e7650d;
+}
+
 .ranking {
-  position: absolute;
-  padding: 0.75rem 1rem;
-  top: -30rem;
-  right: 3rem;
-  width: 20rem;
-  height: 30rem;
-  background-color: #ffa56c;
-  transform: translateY(100%);
-  transition: transform 1s ease-in-out;
+    position: absolute;
+    padding: 0.75rem 1rem;
+    top: -30rem;
+    right: 3rem;
+    width: 20rem;
+    height: 30rem;
+    background-color: var(--main-ranking-color);
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out;
 }
-.ranking button {
-  position: absolute;
-  bottom: -2.5rem;
-  right: 1rem;
-  background-color: #F9E4D4;
+
+.btn-ranking {
+    position: absolute;
+    bottom: -2.5rem;
+    right: 1rem;
+    background-color: var(--btn-color);
 }
-.ranking .btn-ranking-transition {
-  border: 1px solid #F9E4D4;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  cursor: pointer;
+
+.btn-ranking-transition {
+    border: 1px solid var(--btn-color);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: pointer;
 }
 
 .ranking-hidden {
-  transform: translateY(0%);
+    transform: translateY(0%);
 }
 
 .table-div {
-  height: 100%;
-  overflow: auto;
+    height: 100%;
+    overflow: auto;
 }
-.table-div table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  border-top: 3px solid #e7650d;
-  border-bottom: 3px solid #e7650d;
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-top: 3px solid var(--border-color);
+    border-bottom: 3px solid var(--border-color);
 }
-.table-div table th,
-.table-div table td {
-  text-align: center;
-  padding: 0.3rem;
+
+th,
+td {
+    text-align: center;
+    padding: .3rem;
 }
 
 .table-div::-webkit-scrollbar {
-  width: 0rem;
+    width: 0rem;
 }
-
-/*# sourceMappingURL=ranking.css.map */
