@@ -25,7 +25,7 @@ const prepareCardsToGame = () => {
 const generateCardGrid = (cardsArray) => {
     cardsArray.forEach(photo => {
         const div = createDiv(['card']);
-        const img = createImg(photo.currentImg, `Card ${photo.id}`, []);
+        const img = createImg(photo.currentImg, `Card ${photo.id}`, ['card-img']);
         img.id = photo.id;
         img.addEventListener('click', () => {
             photo.reverseCard();
