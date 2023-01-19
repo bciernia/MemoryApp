@@ -57,3 +57,16 @@ td {
 .table-div::-webkit-scrollbar {
     width: 0rem;
 }
+
+@media only screen and (max-width: 768px) {
+    .ranking {
+        width: 100%;
+        right: 0;
+    }
+
+    .btn-ranking {
+        position: absolute;
+        right: 1rem;
+        background-color: var(--btn-color);
+    }
+}
