@@ -22,13 +22,19 @@
     bottom: -2.5rem;
     right: 1rem;
     background-color: var(--btn-color);
+    border: 1px solid var(--btn-color);
 }
 
 .btn-ranking-transition {
-    border: 1px solid var(--btn-color);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    cursor: pointer;
+}
+
+.btn-clear-ranking{
+    width: 100%;
+    margin:0.5rem 0;
+    border: 1px solid var(--btn-color);
+    border-radius: 10px;
 }
 
 .ranking-hidden {
